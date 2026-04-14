@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dogedoge4 Clicker</title>
+<style>
+body {
+background-color:blue;
+}
+h2{
+color:yellow;  
+}
+h3 {
+color:rgb(255,255,255);
+}
+</style>
+</head>
+<body>
+<script>
+var bottles=0;
+var bottlespsec=0;
+var bottlespclick=1;
+var shop1price=10;
+var firstPrice=25;
+var secondPrice=100;
+function increase(){
+bottles+=bottlespclick;
+updateInfo()
+}
+function updateInfo(){
+  document.getElementById("count").innerText="Bottles: "+bottles.toFixed(2); 
+  document.getElementById("bottlespsec").innerText="Bottles per sec: "+bottlespsec.toFixed(2);
+  document.getElementById("bottlespclick").innerText="Bottles per click: "+bottlespclick.toFixed(2);
+}
+function BPCinc(){
+	if (bottles>=shop1price) {
+    bottlespclick+=1;
+    bottles-=shop1price;
+    shop1price*=1.75;
+    updateInfo()
+    document.getElementById("IncClick").innerText="Increase bottles per click price: "+shop1price.toFixed(2);
+    }
+}
+function buyFirst() {
+	if (bottles>=firstPrice) {
+    bottlespsec+=1;
+    bottles-=firstPrice;
+    firstPrice*=1.75;
+    updateInfo()
+    document.getElementById("autog").innerText="Auto g Price: "+firstPrice.toFixed(2);
+    }
+}
+function buySecond() {
+	if (bottles>=secondPrice) {
+    bottlespsec+=3;
+    bottles-=secondPrice;
+    secondPrice*=1.75;
+    updateInfo()
+    document.getElementById("babyant").innerText="Baby Ant Price: "+secondPrice.toFixed(2);
+    }
+}
+setInterval(function perSecondIncome() {
+  bottles+=bottlespsec/25;
+  updateInfo()
+}, 40);
+</script>
+
+<h1 style="color:#2bffa3">dogedoge4 Clicker</h1><div></div>
+<button id="button" onclick="increase()">click</button>
+<div></div>
+<h2 id="count">Bottles: 0.00</h2>
+<h3 id="bottlespclick">Bottles per click: 1</h3>
+<h3 id="bottlespsec">Bottles per second: 0</h3>
+<h2>Shop</h2>
+<h3>Hover over buttons for more info.</h3>
+<button id="IncClick" onclick="BPCinc()" title="Gives you 1 more bottle per click.">Increase bottles per click price: 10.00</button>
+<button id="autog" onclick="buyFirst()" title="Gives you 1 more bottle per second">Auto g price: 25.00</button>
+<button id="babyant" onclick="buySecond()" title="Gives you 3 more bottles per second">Baby Ant price: 100.00</button>
+
+</body>
+</html>
+
