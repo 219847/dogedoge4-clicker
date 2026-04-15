@@ -16,6 +16,14 @@ color:yellow;
 h3 {
 color:rgb(255,255,255);
 }
+.upgrade {
+	font-family:"Ubuntu";
+	background-color:rgb(0,180,255);
+}
+.item {
+	font-family:"Ubuntu";
+	background-color:rgb(2,242,242);
+}
 </style>
 </head>
 <body>
@@ -108,13 +116,13 @@ setInterval(function perSecondIncome() {
 <h2>Shop</h2>
 <h3>Hover over buttons for more info.</h3>
 <h3>Upgrades</h3>
-<button id="IncClick" onclick="BPCinc()" title="Gives you 1 more bottle per click.">Increase bottles per click price: 10.00</button>
+<button id="IncClick" class="upgrade" onclick="BPCinc()" title="Gives you 1 more bottle per click.">Increase bottles per click price: 10.00</button>
 <h3>Items</h3>
-<button id="autoClick" onclick="autoClickBuy()" title="Gives you +0.1BPC and +0.1BPS">Auto Clicker Price: 5.00</button>
-<button id="autog" onclick="buyFirst()" title="Gives you 1 more bottle per second">Auto g price: 25.00</button>
-<button id="babyant" onclick="buySecond()" title="Gives you 3 more bottles per second">Baby Ant Price: 100.00</button>
-<button id="queenant" onclick="buyThird()" title="Gives you 10 more bottles per second">Queen Ant Price: 923.00</button>
-<button id="scorpion" onclick="buyFourth()" title="Gives you 35 more bottles per second">Scorpion Price: 6766.00</button>
+<button id="autoClick" onclick="autoClickBuy()" class="item" title="Gives you +0.1BPC and +0.1BPS">Auto Clicker Price: 5.00</button>
+<button id="autog" onclick="buyFirst()" class="item" title="Gives you 1 more bottle per second">Auto g price: 25.00</button>
+<button id="babyant" onclick="buySecond()" class="item" title="Gives you 3 more bottles per second">Baby Ant Price: 100.00</button>
+<button id="queenant" onclick="buyThird()" class="item" title="Gives you 10 more bottles per second">Queen Ant Price: 923.00</button>
+<button id="scorpion" onclick="buyFourth()" class="item" title="Gives you 35 more bottles per second">Scorpion Price: 6766.00</button>
 <div>‎ </div>
 <h2>Chat</h2>
 <iframe src="https://219847.github.io/chat-window-for-iframe" height="350px" width="600px"></iframe>
