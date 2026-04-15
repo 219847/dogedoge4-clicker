@@ -29,14 +29,19 @@ color:rgb(255,255,255);
 <body>
 <script>
 var bottles=0;
+var upgrade0BPCincs=0;
+var item0AutoClickers=0;
+
 var bottlespsec=0;
 var bottlespclick=1;
+	
 var shop1price=10;
 var shop2price=5;
 var firstPrice=25;
 var secondPrice=100;
 var thirdPrice=923;
 var fourthPrice=6766;
+	
 function increase(){
 bottles+=bottlespclick;
 updateInfo()
@@ -53,6 +58,7 @@ function BPCinc(){
     shop1price*=1.75;
     updateInfo()
     document.getElementById("IncClick").innerText="Increase bottles per click price: "+shop1price.toFixed(2);
+	upgrade0BPCincs+=1;
     }
 }
 function autoClickBuy(){
@@ -63,6 +69,7 @@ function autoClickBuy(){
     shop2price*=1.35;
     updateInfo()
     document.getElementById("autoClick").innerText="Auto Clicker Price: "+shop2price.toFixed(2);
+	item0AutoClickers+=1;
     }
 }
 function buyFirst() {
