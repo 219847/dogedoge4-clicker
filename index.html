@@ -38,12 +38,11 @@ var upgradesIndex=[0,0,0,0,0,0,0,0,0,0];
 var itemsIndex=[0,0,0,0,0,0,0,0,0,0];
 var itemsIncreaseBPS=[0.1,1,3,10,35,0,0,0,0,0];
 var upgradeLevels=[1,0,0,0,0,0,0,0,0,0,0];
+var upgradePrices=[10,0,0,0,0,0,0,0,0];
+var upgradePricesItems=[50,195,0,0,0,0,0,0];
 var bottlespsec=0;
 var bottlespclick=1;
 	
-var shop1price=10;
-var shop3price=50;
-var shop4price=195;
 var shop2price=5;
 var firstPrice=25;
 var secondPrice=100;
@@ -62,40 +61,40 @@ function updateInfo(){
 
 //UPGRADES
 function BPCinc(){ //upgrade 0
-	if (bottles>=shop1price) {
+	if (bottles>=upgradePrices[0]) {
     bottlespclick+=1;
-    bottles-=shop1price;
-    shop1price*=1.75;
+    bottles-=upgradePrices[0];
+    upgradePrices[0]*=1.75;
     upgradesIndex[0]+=1;
     updateInfo();
 	upgradeLevels[0]+=1;
-    document.getElementById("IncClick").innerText="Increase bottles per click price: "+shop1price.toFixed(2)+" Level "+upgradeLevels[0];
+    document.getElementById("IncClick").innerText="Increase bottles per click price: "+upgradePrices[0].toFixed(2)+" Level "+upgradeLevels[0];
     }
 }
 
-function autoClickUpgrade() {//upgrade 1
-  if (bottles>=shop3price) {
+function autoClickUpgrade() {//item upgrade 0
+  if (bottles>=upgradePricesItems[0]) {
 	bottlespsec-=itemsIncreaseBPS[0]*itemsIndex[0];
-    bottles-=shop3price;
-    shop3price*=3.35;
+    bottles-=upgradePricesItems[0];
+    upgradePricesItems[0]*=3.35;
     itemsIncreaseBPS[0]*=3;
     bottlespsec+=itemsIncreaseBPS[0]*itemsIndex[0];
     updateInfo();
 	upgradeLevels[1]+=1;
-    document.getElementById("autoUpgrade").innerText="Auto Clicker Upgrade: "+shop3price.toFixed(2)+" Level "+upgradeLevels[1];
+    document.getElementById("autoUpgrade").innerText="Auto Clicker Upgrade: "+upgradePricesItems[0].toFixed(2)+" Level "+upgradeLevels[1];
     }
 }
 
 function autoGUpgrade() {//upgrade 1
-  if (bottles>=shop4price) {
+  if (bottles>=upgradePricesItems[1]) {
 	bottlespsec-=itemsIncreaseBPS[1]*itemsIndex[1];
-    bottles-=shop4price;
-    shop4price*=3.35;
+    bottles-=upgradePricesItems[1];
+    upgradePricesItems[1]*=3.35;
     itemsIncreaseBPS[1]*=3;
     bottlespsec+=itemsIncreaseBPS[1]*itemsIndex[1];
     updateInfo();
 	upgradeLevels[2]+=1;
-    document.getElementById("autoGUpgrade").innerText="Auto Gooner Upgrade: "+shop4price.toFixed(2)+" Level "+upgradeLevels[2];
+    document.getElementById("autoGUpgrade").innerText="Auto Gooner Upgrade: "+upgradePricesItems[1].toFixed(2)+" Level "+upgradeLevels[2];
     }
 }
 //SHOP ITEMS
@@ -175,7 +174,7 @@ setInterval(function perSecondIncome() {
 <button id="autoGUpgrade" class="upgrade" onclick="autoGUpgrade()" title="Auto Gooners are 3x as efficient.">Auto G Upgrade: 195.00 Level 0</button>
 <h3>Items (and mobs dogedoge4 likes)</h3>
 <button id="autoClick" onclick="buyZeroth()" class="item" title="Gives you +0.1BPC and +0.1BPS">Auto Clicker Price: 5.00</button>
-<button id="autog" onclick="buyFirst()" class="item" title="Gives you 1 more bottle per second">Auto g price: 25.00</button>
+<button id="autog" onclick="buyFirst()" class="item" title="Gives you 1 more bottle per second">Auto g Price: 25.00</button>
 <button id="babyant" onclick="buySecond()" class="item" title="Gives you 3 more bottles per second">Baby Ant Price: 100.00</button>
 <button id="queenant" onclick="buyThird()" class="item" title="Gives you 10 more bottles per second">Queen Ant Price: 923.00</button>
 <button id="scorpion" onclick="buyFourth()" class="item" title="Gives you 35 more bottles per second">Scorpion Price: 6766.00</button>
