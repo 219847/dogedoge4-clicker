@@ -42,8 +42,7 @@ var upgradePrices=[10,0,0,0,0,0,0,0,0];
 var upgradePricesItems=[50,195,0,0,0,0,0,0];
 var bottlespsec=0;
 var bottlespclick=1;
-	
-var zerothPrice=5;
+var itemPrices=[5,25,100,923,6766,0,0,0,0,0,0,0];
 var firstPrice=25;
 var secondPrice=100;
 var thirdPrice=923;
@@ -51,7 +50,7 @@ var fourthPrice=6766;
 	
 function increase(){
 bottles+=bottlespclick;
-updateInfo()
+updateInfo();
 }
 function updateInfo(){
   document.getElementById("count").innerText="Bottles: "+bottles.toFixed(2); 
@@ -99,14 +98,14 @@ function autoGUpgrade() {//item upgrade 1
 }
 //SHOP ITEMS
 function buyZeroth(){ //item 0
-	if (bottles>=zerothPrice) {
+	if (bottles>=itemPrices[0]) {
     bottlespclick+=0.1;
 	bottlespsec+=itemsIncreaseBPS[0];
-    bottles-=zerothPrice;
-    zerothPrice*=1.35;
+    bottles-=itemPrices[0];
+    itemPrices[0]*=1.35;
     itemsIndex[0]+=1;
-    updateInfo()
-    document.getElementById("autoClick").innerText="Auto Clicker Price: "+zerothPrice.toFixed(2);
+    updateInfo();
+    document.getElementById("autoClick").innerText="Auto Clicker Price: "+itemPrices[0].toFixed(2);
     }
 }
 function buyFirst() { //item 1
@@ -125,7 +124,7 @@ function buySecond() {
     bottles-=secondPrice;
     secondPrice*=1.75;
     itemsIndex[2]+=1;
-    updateInfo()
+    updateInfo();
     document.getElementById("babyant").innerText="Baby Ant Price: "+secondPrice.toFixed(2);
     }
 }
@@ -135,7 +134,7 @@ function buyThird() {
     bottles-=thirdPrice;
     thirdPrice*=1.75;
     itemsIndex[3]+=1;
-    updateInfo()
+    updateInfo();
     document.getElementById("queenant").innerText="Queen Ant Price: "+thirdPrice.toFixed(2);
     }
 }
@@ -145,7 +144,7 @@ function buyFourth() {
     bottles-=fourthPrice;
     fourthPrice*=1.75;
     itemsIndex[4]+=1;
-    updateInfo()
+    updateInfo();
     document.getElementById("scorpion").innerText="Scorpion Price: "+fourthPrice.toFixed(2);
     }
 }
@@ -156,7 +155,7 @@ function buyFourth() {
 //BOTTLES PER SECOND
 setInterval(function perSecondIncome() {
   bottles+=bottlespsec/25;
-  updateInfo()
+  updateInfo();
 }, 40);
 </script>
 
