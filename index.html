@@ -43,7 +43,7 @@ var upgradePricesItems=[50,195,0,0,0,0,0,0];
 var bottlespsec=0;
 var bottlespclick=1;
 	
-var shop2price=5;
+var zerothPrice=5;
 var firstPrice=25;
 var secondPrice=100;
 var thirdPrice=923;
@@ -85,7 +85,7 @@ function autoClickUpgrade() {//item upgrade 0
     }
 }
 
-function autoGUpgrade() {//upgrade 1
+function autoGUpgrade() {//item upgrade 1
   if (bottles>=upgradePricesItems[1]) {
 	bottlespsec-=itemsIncreaseBPS[1]*itemsIndex[1];
     bottles-=upgradePricesItems[1];
@@ -99,14 +99,14 @@ function autoGUpgrade() {//upgrade 1
 }
 //SHOP ITEMS
 function buyZeroth(){ //item 0
-	if (bottles>=shop2price) {
+	if (bottles>=zerothPrice) {
     bottlespclick+=0.1;
 	bottlespsec+=itemsIncreaseBPS[0];
-    bottles-=shop2price;
-    shop2price*=1.35;
+    bottles-=zerothPrice;
+    zerothPrice*=1.35;
     itemsIndex[0]+=1;
     updateInfo()
-    document.getElementById("autoClick").innerText="Auto Clicker Price: "+shop2price.toFixed(2);
+    document.getElementById("autoClick").innerText="Auto Clicker Price: "+zerothPrice.toFixed(2);
     }
 }
 function buyFirst() { //item 1
