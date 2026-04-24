@@ -42,11 +42,7 @@ var upgradePrices=[10,0,0,0,0,0,0,0,0];
 var upgradePricesItems=[50,195,0,0,0,0,0,0];
 var bottlespsec=0;
 var bottlespclick=1;
-var itemPrices=[5,25,100,923,6766,0,0,0,0,0,0,0];
-var firstPrice=25;
-var secondPrice=100;
-var thirdPrice=923;
-var fourthPrice=6766;
+var itemPrices=[5,25,100,923,6766,0,0,0,0,0,0,0]; 
 	
 function increase(){
 bottles+=bottlespclick;
@@ -109,43 +105,43 @@ function buyZeroth(){ //item 0
     }
 }
 function buyFirst() { //item 1
-	if (bottles>=firstPrice) {
+	if (bottles>=itemPrices[1]) {
     bottlespsec+=itemsIncreaseBPS[1];
-    bottles-=firstPrice;
-    firstPrice*=1.75;
+    bottles-=itemPrices[1];
+    itemPrices[1]*=1.75;
     itemsIndex[1]+=1;
     updateInfo()
-    document.getElementById("autog").innerText="Auto g Price: "+firstPrice.toFixed(2);
+    document.getElementById("autog").innerText="Auto g Price: "+itemPrices[1].toFixed(2);
     }
 }
 function buySecond() {
-	if (bottles>=secondPrice) {
+	if (bottles>=itemPrices[2]) {
     bottlespsec+=itemsIncreaseBPS[2];
-    bottles-=secondPrice;
-    secondPrice*=1.75;
+    bottles-=itemPrices[2];
+    itemPrices[2]*=1.75;
     itemsIndex[2]+=1;
     updateInfo();
-    document.getElementById("babyant").innerText="Baby Ant Price: "+secondPrice.toFixed(2);
+    document.getElementById("babyant").innerText="Baby Ant Price: "+itemPrices[2].toFixed(2);
     }
 }
 function buyThird() {
-	if (bottles>=thirdPrice) {
+	if (bottles>=itemPrices[3]) {
     bottlespsec+=itemsIncreaseBPS[3];
-    bottles-=thirdPrice;
-    thirdPrice*=1.75;
+    bottles-=itemPrices[3];
+    itemPrices[3]*=1.75;
     itemsIndex[3]+=1;
     updateInfo();
-    document.getElementById("queenant").innerText="Queen Ant Price: "+thirdPrice.toFixed(2);
+    document.getElementById("queenant").innerText="Queen Ant Price: "+itemPrices[3].toFixed(2);
     }
 }
 function buyFourth() {
-	if (bottles>=fourthPrice) {
+	if (bottles>=itemPrices[4]) {
     bottlespsec+=itemsIncreaseBPS[4];
-    bottles-=fourthPrice;
-    fourthPrice*=1.75;
+    bottles-=itemPrices[4];
+    itemPrices[4]*=1.75;
     itemsIndex[4]+=1;
     updateInfo();
-    document.getElementById("scorpion").innerText="Scorpion Price: "+fourthPrice.toFixed(2);
+    document.getElementById("scorpion").innerText="Scorpion Price: "+itemPrices[4].toFixed(2);
     }
 }
 
