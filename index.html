@@ -42,6 +42,17 @@ var upgradePricesItems=[50,195,512,0,0,0,0,0];
 var bottlespsec=0;
 var bottlespclick=1;
 var itemPrices=[5,25,100,923,6766,0,0,0,0,0,0,0]; 
+var itemUpgradeColors = [
+  "background-color:#7EEF6D;",
+  "background-color:#FFE65D;",
+  "background-color:#4d52e3;",
+  "background-color:#861FDE;",
+  "background-color:#DE1F1F;",
+  "background-color:#1fdbde;",
+  "background-color:#ff2b75;",
+  "background-color:#2bffa3;",
+  "background-color:#EEEEEE;"
+];
 	
 function increase(){
 bottles+=bottlespclick;
@@ -75,6 +86,7 @@ function autoClickUpgrade() {//item upgrade 0
     updateInfo();
 	upgradeLevels[1]+=1;
     document.getElementById("autoUpgrade").innerText="Auto Clicker Upgrade: "+upgradePricesItems[0].toFixed(2)+" Level "+upgradeLevels[1];
+	document.getElementById("autoUpgrade").setAttribute("style",itemUpgradeColors[upgradeLevels[1]]);
     }
 }
 
@@ -175,9 +187,9 @@ setInterval(function perSecondIncome() {
 <h3>Hover over buttons for more info.</h3>
 <h3>Upgrades</h3>
 <button id="IncClick" class="upgrade" onclick="BPCinc()" title="Gives you 1 more bottle per click.">Increase bottles per click price: 10.00 Level 1</button>
-<button id="autoUpgrade" class="upgrade" onclick="autoClickUpgrade()" title="Auto Clickers are 3x as efficient.">Auto Clicker Upgrade: 50.00 Level 0</button>
-<button id="autoGUpgrade" class="upgrade" onclick="autoGUpgrade()" title="Auto Gooners are 3x as efficient.">Auto G Upgrade: 195.00 Level 0</button>
-<button id="babyantUpgrade" class="upgrade" onclick="babyantUpgrade()" title="Baby ants are 3x as efficient.">Baby ant Upgrade: 512.00 Level 0</button>
+<button id="autoUpgrade" class="itemUpgrade" onclick="autoClickUpgrade()" title="Auto Clickers are 3x as efficient." style="background-color:#7EEF6D;">Auto Clicker Upgrade: 50.00 Level 0</button>
+<button id="autoGUpgrade" class="itemUpgrade" onclick="autoGUpgrade()" title="Auto Gooners are 3x as efficient." style="background-color:#7EEF6D;">Auto G Upgrade: 195.00 Level 0</button>
+<button id="babyantUpgrade" class="itemUpgrade" onclick="babyantUpgrade()" title="Baby ants are 3x as efficient." style="background-color:#7EEF6D;">Baby ant Upgrade: 512.00 Level 0</button>
 <h3>Items (and mobs dogedoge4 likes)</h3>
 <button id="autoClick" onclick="buyZeroth()" class="item" title="Gives you +0.1BPC and +0.1BPS">Auto Clicker Price: 5.00</button>
 <button id="autog" onclick="buyFirst()" class="item" title="Gives you 1 more bottle per second">Auto g Price: 25.00</button>
